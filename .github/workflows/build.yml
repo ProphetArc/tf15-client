@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Android
-          path: android/app/build/outputs/apk/release/app-release-unsigned-signed.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
   windows:
     name: Windows
     runs-on: windows-latest
@@ -94,7 +94,7 @@ jobs:
         uses: actions/download-artifact@v2
       - name: Repackage binaries
         run: |
-          mv Android/app-release-unsigned-signed.apk tf15-client.apk
+          mv Android/app-debug.apk tf15-client.apk
           mkdir -p tfc/cl_dlls
           mv Windows/build/*/*/*.dll tfc/cl_dlls
           mv Windows/android/app/extras.pak tfc/
