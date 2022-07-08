@@ -56,7 +56,7 @@ public class LauncherActivity extends AppCompatActivity {
 		ExtendedFloatingActionButton launchButton = findViewById(R.id.launchButton);
 		launchButton.setOnClickListener((view) -> startActivity(new Intent().setComponent(new ComponentName("su.xash.engine", "su.xash.engine.XashActivity"))
 				.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-				.putExtra("pakfile", getExternalFilesDir(null).getPath() + "/storage/emulated/0/Android/data/su.xash.engine/files/tfc/extras.pak")
+				.putExtra("pakfile", getFilesDir().getAbsolutePath() + "/extras.pak")
 				.putExtra("gamedir", "tfc")
 				.putExtra("argv", launchParameters.getText())
 				.putExtra("gamelibdir", getApplicationInfo().nativeLibraryDir)));
