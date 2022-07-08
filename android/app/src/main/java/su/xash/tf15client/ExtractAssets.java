@@ -14,7 +14,7 @@ public class ExtractAssets {
 	private static void extractFile(Context context, String filename, boolean overwrite) {
 		try {
 			InputStream in = context.getAssets().open(filename);
-			File outFile = new File(context.getExternalFilesDir(null).getPath() + "/storage/emulated/0/Android/data/su.xash.engine/files/tfc", filename);
+			File outFile = new File(context.getFilesDir().getAbsolutePath(), filename);
 
 			if (outFile.isFile() && !overwrite) {
 				return;
